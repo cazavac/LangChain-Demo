@@ -64,35 +64,7 @@ flowchart LR
 
 ---
 
-## 📈 Evaluation Sequence (SDK call-by-call)
 
-```mermaid
-sequenceDiagram
-    autonumber
-    participant Dev as You
-    participant Eval as eval.py
-    participant LS as LangSmith SDK
-    participant DS as Dataset (DATASET_ID)
-    participant Agent as agent.py (graph)
-    participant Tools as tools.py
-
-    Dev->>Eval: python eval.py
-    Eval->>LS: list_examples(dataset_id)
-    LS-->>Eval: examples[]
-    loop For each example
-        Eval->>Agent: run_once(HUMAN)
-        Agent->>Tools: (if needed) tool invocation(s)
-        Tools-->>Agent: tool result
-        Agent-->>Eval: final response (output)
-        Eval->>Eval: run evaluators (similarity, correctness, helpfulness, containment)
-    end
-    Eval->>Eval: print local averages (per evaluator)
-    Eval->>LS: evaluate(target_function, evaluators, data)
-    LS-->>Eval: experiment URL
-    Eval-->>Dev: print LangSmith URL
-```
-
----
 
 ## 🚀 How to Run
 
