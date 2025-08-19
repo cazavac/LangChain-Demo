@@ -38,7 +38,7 @@ flowchart TD
 ## 📂 Project Structure
 
 ```
-
+.
 ├── agent.py        # LangGraph agent (Gemini + tools)
 ├── tools.py        # Book Nook tools (stock + author info)
 ├── prompts.py      # System prompt + correctness rubric
@@ -144,23 +144,24 @@ https://smith.langchain.com/.../experiments/...
 
 ```mermaid
 flowchart TD
-    A[Current ReAct Agent] --> B{Extend Capabilities?}
+    A["Current ReAct Agent"] --> B{Extend Capabilities?}
 
-    B -- Add Tools --> T[More Tools\n• pricing\n• new releases\n• events]
-    B -- Add RAG --> R[RAG Pipeline\n(embeddings + vector store)]
-    B -- Memory --> M[Short-term Memory\n(conversation history)]
-    B -- HITL --> H[Human-in-the-Loop\n(escalation / approval)]
-    B -- Feedback --> F[User Feedback Loop\n(thumbs / rubric capture)]
+    B -- "Add Tools" --> T["More Tools\n- pricing\n- new releases\n- events"]
+    B -- "Add RAG" --> R["RAG Pipeline\n(embeddings + vector store)"]
+    B -- "Memory" --> M["Short-term Memory\n(conversation history)"]
+    B -- "HITL" --> H["Human-in-the-Loop\n(escalation / approval)"]
+    B -- "Feedback" --> F["User Feedback Loop\n(thumbs / rubric capture)"]
 
-    R --> R1[Embed Query]
-    R1 --> R2[Search Vector Store]
-    R2 --> R3[Retrieve Context]
-    R3 --> R4[Compose Answer\n(prompt + retrieved)]
+    R --> R1["Embed Query"]
+    R1 --> R2["Search Vector Store"]
+    R2 --> R3["Retrieve Context"]
+    R3 --> R4["Compose Answer\n(prompt + retrieved)"]
 
-    H --> H1[Detect Uncertainty / Risk]
-    H1 --> H2[Route to Human]
+    H --> H1["Detect Uncertainty / Risk"]
+    H1 --> H2["Route to Human"]
+
 ```
-
+---
 - **More tools**: pricing, promotions, events/calendar.  
 - **RAG**: add a vector store for larger catalogs and bibliographic data.  
 - **Memory**: keep short conversation history for follow-ups.  
