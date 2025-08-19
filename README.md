@@ -126,7 +126,7 @@ Helpfulness: 8.75/10
 Containment: 8.50/10
 
 ✅ View the LangSmith evaluation results at:
-https://smith.langchain.com/.../experiments/...
+[https://smith.langchain.com](https://smith.langchain.com/o/e7cf1b03-de5d-489f-840a-a0369135dda6/datasets/1f2fabf3-136d-4c68-ba4f-b9b238520f20/compare?selectedSessions=b3415945-f468-4a05-afe2-72b2e9117c32)
 ```
 
 ---
