@@ -78,7 +78,7 @@ flowchart LR
 ## 🚀 Getting Started
 
 ### 1) Environment
-This project requires **Python 3.9+**.
+This project requires **Python 3.12.4+**.
 
 ```bash
 python -m venv .venv
