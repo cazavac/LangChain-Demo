@@ -16,16 +16,18 @@ Simple [LangGraph-based](https://www.langchain.com/langgraph) ReAct bookstore ag
 
 ## 🔄 Agent Flow
 
+
 ```mermaid
 flowchart TD
-    A[User Query] --> B[Chatbot Node]
+    A["User Query"] --> B["Chatbot Node"]
     B -->|Decide| C{Tool Needed?}
-    C -- No --> G[Final Response (prompt knowledge)]
-    C -- Yes --> D[Tool Call]
-    D -->|stock or author tool| E[Process Tool Output]
-    E --> F[Compose Answer]
-    F --> G[Final Response (tool + prompt)]
+    C -- No --> G["Final Response (prompt knowledge)"]
+    C -- Yes --> D["Tool Call"]
+    D -->|stock or author tool| E["Process Tool Output"]
+    E --> F["Compose Answer"]
+    F --> G["Final Response (tool + prompt)"]
 ```
+
 
 - **Node**: `chatbot` wraps the system prompt and calls the ReAct agent (Gemini + tools).  
 - **Edges**: `START → chatbot → END`.  
