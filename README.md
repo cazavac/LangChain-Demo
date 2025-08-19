@@ -20,11 +20,11 @@ Simple [LangGraph-based](https://www.langchain.com/langgraph) ReAct bookstore ag
 flowchart TD
     A[User Query] --> B[Chatbot Node]
     B -->|Decide| C{Tool Needed?}
-    C -- No --> G[Final Response<br/>(from prompt knowledge)]
+    C -- No --> G[Final Response (prompt knowledge)]
     C -- Yes --> D[Tool Call]
-    D -->|check_stock_availability or get_author_info| E[Process Tool Output]
+    D -->|stock or author tool| E[Process Tool Output]
     E --> F[Compose Answer]
-    F --> G[Final Response<br/>(tool + prompt)]
+    F --> G[Final Response (tool + prompt)]
 ```
 
 - **Node**: `chatbot` wraps the system prompt and calls the ReAct agent (Gemini + tools).  
