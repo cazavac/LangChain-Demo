@@ -38,7 +38,7 @@ flowchart TD
 ## 📂 Project Structure
 
 ```
-.
+
 ├── agent.py        # LangGraph agent (Gemini + tools)
 ├── tools.py        # Book Nook tools (stock + author info)
 ├── prompts.py      # System prompt + correctness rubric
